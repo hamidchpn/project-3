@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAXSIZE 10
+
+int main() {
+    int numbers[MAXSIZE];
+    int i, smallest, largest;
+
+    // Generate 10 random numbers
+    for (i = 0; i < MAXSIZE; i++) {
+        numbers[i] = rand() % 100; // Generate random numbers between 0 and 99
+    }
+
+    // Find the smallest and largest numbers
+    smallest = largest = numbers[0];
+    for (i = 1; i < MAXSIZE; i++) {
+        if (numbers[i] < smallest) {
+            smallest = numbers[i];
+        }
+        if (numbers[i] > largest) {
+            largest = numbers[i];
+        }
+    }
+
+    // Print the results
+    printf("Generated random numbers:\n");
+    for (i = 0; i < MAXSIZE; i++) {
+        printf("%d ", numbers[i]);
+    }
+    printf("\nSmallest number: %d\n", smallest);
+    printf("Largest number: %d\n", largest);
+
+    return 0;
+}
